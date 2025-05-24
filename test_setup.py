@@ -14,7 +14,7 @@ async def test_endpoints():
         assert response.json()["status"] == "healthy"
         logger.success("Health endpoint working!")
 
-        # Test root endpoint
+        # Test root endpoint         
         logger.info("Testing root endpoint...")
         response = await client.get(f"{base_url}/")
         assert response.status_code == 200
