@@ -4,23 +4,21 @@ from fastapi.responses import JSONResponse
 from loguru import logger
 import os
 
-from app.core.config import get_settings
-from app.api.api_v1.api import router as api_v1_router
+from app.core.config import settings
+from app.api.v1.api import api_router
 from app.db.init_db import init_db
-
-settings = get_settings()
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
     description="Backend API for AI-powered application",
     version="1.0.0",
-    openapi_url=f"{settings.API_V1_STR}/openapi.json"
+    openapi_url=f"{settings.API_V1_PREFIX}/openapi.json"
 )
 
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.BACKEND_CORS_ORIGINS,
+    allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -39,7 +37,7 @@ logger.add(
 )
 
 # Include API router
-app.include_router(api_v1_router, prefix=settings.API_V1_STR)
+app.include_router(api_router, prefix=settings.API_V1_PREFIX)
 
 @app.on_event("startup")
 async def startup_event():
@@ -80,4 +78,8 @@ async def general_exception_handler(request, exc):
     return JSONResponse(
         status_code=500,
         content={"detail": "Internal server error"},
-    ) 
+    )
+
+@app.get("/health")
+async def health_check():
+    return JSONResponse({"status": "healthy"}) 
