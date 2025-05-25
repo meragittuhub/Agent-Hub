@@ -1,0 +1,39 @@
+# API Documentation
+
+## Request Format
+POST /api/v1/agents/your-agent/predict
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN
+
+{
+    "data": ["This is the input text to analyze"]
+}
+
+## Response Format
+{
+    "data": [{
+        "sentiment": "POSITIVE",
+        "confidence": 0.85,
+        "length": 31,
+        "complexity_score": 0.67,
+        "keywords": ["analyze"],
+        "formatted_output": "📊 Analysis Results:\n\nSentiment: POSITIVE (Confidence: 0.85)\nText Length: 31 characters\nComplexity Score: 0.67\nKeywords Found: analyze"
+    }],
+    "status": "success",
+    "duration": 0.123
+}
+
+## Error Response Format
+{
+    "error": {
+        "message": "Invalid input format",
+        "code": "INVALID_INPUT"
+    },
+    "status": "error"
+}
+
+## Notes
+- The API expects a list of strings in the "data" field
+- Response includes both structured data and formatted output
+- All numeric values are rounded to 2 decimal places
+- Authentication via Bearer token is required 

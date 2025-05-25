@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 30% 96%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 12 84% 69%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 20 30% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 20 30% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 12 84% 69%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 30% 90%;
+    --input: 20 30% 90%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --gradient-background: linear-gradient(135deg, var(--gradient-light-start), var(--gradient-light-mid), var(--gradient-light-end));
+  }
+
+  .dark {
+    /* Very dark purple background */
+    --background: 270 47% 11%;
+    --foreground: 24 100% 60%;  /* Bright fluorescent orange */
+
+    /* Slightly lighter dark purple for cards */
+    --card: 270 47% 15%;
+    --card-foreground: 24 100% 60%;  /* Bright fluorescent orange */
+
+    --popover: 270 47% 15%;
+    --popover-foreground: 24 100% 60%;  /* Bright fluorescent orange */
+
+    /* Dark purple for primary */
+    --primary: 270 47% 18%;
+    --primary-foreground: 24 100% 60%;  /* Bright fluorescent orange */
+
+    /* Darker purple for secondary */
+    --secondary: 270 47% 13%;
+    --secondary-foreground: 24 100% 60%;  /* Bright fluorescent orange */
+
+    /* Darkest purple for muted */
+    --muted: 270 47% 10%;
+    --muted-foreground: 24 100% 70%;  /* Slightly lighter orange for better visibility */
+
+    /* Text color as accent */
+    --accent: 24 100% 60%;  /* Bright fluorescent orange */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 24 100% 60%;  /* Bright fluorescent orange */
+
+    /* Border colors in dark purple */
+    --border: 270 47% 20%;
+    --input: 270 47% 20%;
+    --ring: 270 47% 25%;
+
+    /* Reduced glow variables */
+    --orange-glow: 0 0 5px rgba(255, 102, 0, 0.4),
+                  0 0 10px rgba(255, 102, 0, 0.2);
+    
+    --gradient-background: linear-gradient(135deg, var(--gradient-dark-start), var(--gradient-dark-mid), var(--gradient-dark-end));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    background-image: var(--gradient-background);
+  }
+
+  :root {
+    --gradient-background: linear-gradient(135deg, var(--gradient-light-start), var(--gradient-light-mid), var(--gradient-light-end));
+  }
+
+  .dark {
+    --gradient-background: linear-gradient(135deg, var(--gradient-dark-start), var(--gradient-dark-mid), var(--gradient-dark-end));
+  }
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(26, 11, 46, 0.3);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(45, 18, 69, 0.4);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 102, 0, 0.3);  /* Reduced opacity orange */
+}
+
+/* Input placeholder color for dark mode */
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgba(255, 102, 0, 0.6);  /* Semi-transparent orange */
+  text-shadow: 0 0 3px rgba(255, 102, 0, 0.3);  /* Subtle glow */
+}
+
+/* Code editor and preview text colors for dark mode */
+.dark .monaco-editor,
+.dark .preview-content {
+  color: #ff6600 !important;  /* Bright fluorescent orange */
+  text-shadow: 0 0 2px rgba(255, 102, 0, 0.2);  /* Very subtle glow */
+}
+
+/* Additional text color overrides for dark mode */
+.dark label,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark p {
+  color: #ff6600;  /* Bright fluorescent orange */
+  text-shadow: var(--orange-glow);
+}
+
+.dark .text-muted-foreground {
+  color: rgba(255, 102, 0, 0.8);  /* Semi-transparent orange */
+  text-shadow: 0 0 3px rgba(255, 102, 0, 0.2);  /* Subtle glow */
+}
+
+/* Reduced glow effects for dark mode text */
+.dark .glow-text {
+  color: #ff6600;
+  text-shadow: var(--orange-glow);
+  transition: text-shadow 0.2s ease;
+}
+
+.dark .glow-text:hover {
+  text-shadow: 
+    0 0 8px rgba(255, 102, 0, 0.5),
+    0 0 12px rgba(255, 102, 0, 0.3);
+}
