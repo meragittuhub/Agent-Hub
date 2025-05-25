@@ -31,18 +31,24 @@ export function Header() {
               Create Agent
             </Link>
             <Link
+              to="/contact"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Contact
+            </Link>
+            <Link
               to="/faq"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               FAQ
             </Link>
-          </nav>
-        </div>
+            </nav>
+          </div>
         <div className="flex items-center gap-4">
           <Badge variant="secondary" className="hidden md:flex">
-            <Coins className="w-3 h-3 mr-1" />
+                <Coins className="w-3 h-3 mr-1" />
             {tokenBalance.toLocaleString()} credits
-          </Badge>
+              </Badge>
           <div className="hidden md:flex">
             <ThemeToggle />
           </div>
@@ -57,7 +63,7 @@ export function Header() {
           </Button>
         </div>
       </div>
-      {isMenuOpen && (
+        {isMenuOpen && (
         <div className="container md:hidden py-4 border-t">
           <nav className="flex flex-col space-y-4">
             <Link
@@ -91,9 +97,9 @@ export function Header() {
             <div className="flex items-center">
               <ThemeToggle />
             </div>
-          </nav>
-        </div>
-      )}
+            </nav>
+          </div>
+        )}
     </header>
   );
 }

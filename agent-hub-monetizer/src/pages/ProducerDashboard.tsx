@@ -239,48 +239,48 @@ const ProducerDashboard = () => {
           <TabsContent value="upload" className="mt-4 sm:mt-8">
             <div className="grid xl:grid-cols-2 gap-4 sm:gap-8">
               <div className="space-y-4 sm:space-y-8">
-                <Card>
-                  <CardHeader>
+              <Card>
+                <CardHeader>
                     <CardTitle className="flex items-center text-lg sm:text-xl">
                       <Upload className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
-                      Upload Your Code
-                    </CardTitle>
-                  </CardHeader>
+                    Upload Your Code
+                  </CardTitle>
+                </CardHeader>
                   <CardContent className="space-y-4 sm:space-y-6">
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Agent Name</label>
-                      <Input
-                        value={agentName}
-                        onChange={(e) => setAgentName(e.target.value)}
-                        placeholder="Enter agent name"
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Agent Name</label>
+                    <Input
+                      value={agentName}
+                      onChange={(e) => setAgentName(e.target.value)}
+                      placeholder="Enter agent name"
                         className="w-full"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Description</label>
-                      <Textarea
-                        value={agentDescription}
-                        onChange={(e) => setAgentDescription(e.target.value)}
-                        placeholder="Describe what your agent does"
-                        rows={3}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Description</label>
+                    <Textarea
+                      value={agentDescription}
+                      onChange={(e) => setAgentDescription(e.target.value)}
+                      placeholder="Describe what your agent does"
+                      rows={3}
                         className="w-full"
-                      />
-                    </div>
+                    />
+                  </div>
 
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Token Price per Request</label>
-                      <Input
-                        type="number"
-                        value={tokenPrice}
-                        onChange={(e) => setTokenPrice(e.target.value)}
-                        placeholder="5"
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Token Price per Request</label>
+                    <Input
+                      type="number"
+                      value={tokenPrice}
+                      onChange={(e) => setTokenPrice(e.target.value)}
+                      placeholder="5"
                         min="1"
                         className="w-full"
-                      />
-                    </div>
+                    />
+                  </div>
 
-                    <CodeEditor value={code} onChange={setCode} />
+                  <CodeEditor value={code} onChange={setCode} />
 
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                       <Button 
@@ -295,21 +295,21 @@ const ProducerDashboard = () => {
                           </>
                         ) : (
                           <>
-                            <Play className="w-4 h-4 mr-2" />
-                            Test Agent
+                      <Play className="w-4 h-4 mr-2" />
+                      Test Agent
                           </>
                         )}
-                      </Button>
+                    </Button>
                       <Button 
                         variant="outline" 
                         className="flex-1"
                         onClick={handlePreviewAgent}
                         disabled={!code}
                       >
-                        <Eye className="w-4 h-4 mr-2" />
-                        Preview
-                      </Button>
-                    </div>
+                      <Eye className="w-4 h-4 mr-2" />
+                      Preview
+                    </Button>
+                  </div>
 
                     <Button 
                       className="w-full"
@@ -325,17 +325,17 @@ const ProducerDashboard = () => {
                         'Publish Agent'
                       )}
                     </Button>
-                  </CardContent>
-                </Card>
+                </CardContent>
+              </Card>
               </div>
 
               <div className="hidden sm:block">
-                <AgentPreview 
-                  name={agentName}
-                  description={agentDescription}
-                  tokenPrice={tokenPrice}
-                  code={code}
-                />
+              <AgentPreview 
+                name={agentName}
+                description={agentDescription}
+                tokenPrice={tokenPrice}
+                code={code}
+              />
               </div>
             </div>
           </TabsContent>
