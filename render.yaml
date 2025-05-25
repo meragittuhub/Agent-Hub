@@ -2,8 +2,7 @@ services:
   - type: web
     name: agent-hub-backend
     env: python
-    rootDir: .
-    buildCommand: cd backend && pip install -r requirements.txt
+    buildCommand: pip install -r backend/requirements.txt
     startCommand: cd backend && python run.py
     envVars:
       - key: PORT
