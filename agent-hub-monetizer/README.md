@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# Agent Hub - AI Agent Marketplace
 
-## Project info
+A modern platform for building, sharing, and monetizing AI agents. Agent Hub connects creators with users in a revolutionary token-based economy powered by cutting-edge AI technology.
 
-**URL**: https://lovable.dev/projects/7afcdeb2-ee3c-4694-826d-36214c371362
+![Agent Hub Banner](public/banner.png)
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+### For Agent Creators
+- **Easy Integration**: Upload your code and automatically convert it into a deployable AI agent
+- **Token Economy**: Fair, transparent pricing based on actual usage
+- **Analytics Dashboard**: Track your agent's performance and earnings
+- **Version Control**: Manage different versions of your agents
+- **Documentation Tools**: Create comprehensive documentation for your agents
 
-**Use Lovable**
+### For Users
+- **Diverse Marketplace**: Access a wide range of specialized AI agents
+- **Secure Transactions**: Token-based payment system
+- **Usage Tracking**: Monitor your agent usage and costs
+- **Integration Support**: Easy-to-follow integration guides
+- **Testing Environment**: Try agents before purchase
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7afcdeb2-ee3c-4694-826d-36214c371362) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**:
+  - React.js with TypeScript
+  - Tailwind CSS for styling
+  - Framer Motion for animations
+  - Radix UI for accessible components
+  - React Query for state management
 
-**Use your preferred IDE**
+- **Authentication**:
+  - Secure user authentication system
+  - OAuth integration
+  - JWT token management
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Features**:
+  - Dark/Light mode support
+  - Responsive design
+  - Real-time updates
+  - Interactive UI components
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🏗️ Project Structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+agent-hub-monetizer/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── contexts/       # React contexts
+│   ├── pages/         # Page components
+│   ├── styles/        # Global styles
+│   ├── lib/           # Utility functions
+│   └── types/         # TypeScript type definitions
+├── public/            # Static assets
+└── tests/            # Test files
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Git
 
-**Use GitHub Codespaces**
+### Installation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/agent-hub-monetizer.git
+cd agent-hub-monetizer
+```
 
-## What technologies are used for this project?
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-This project is built with:
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
+Edit `.env.local` with your configuration.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-## How can I deploy this project?
+The application will be available at `http://localhost:3000`
 
-Simply open [Lovable](https://lovable.dev/projects/7afcdeb2-ee3c-4694-826d-36214c371362) and click on Share -> Publish.
+## 🔧 Configuration
 
-## Can I connect a custom domain to my Lovable project?
+Create a `.env.local` file with the following variables:
+```env
+NEXT_PUBLIC_API_URL=your_api_url
+NEXT_PUBLIC_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_STORAGE_BUCKET=your_storage_bucket
+```
 
-Yes, you can!
+## 🤝 Contributing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+We welcome contributions! Please follow these steps:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+For questions and support, reach out to us:
+- Email: contact@agenthub.dev
+- GitHub: [github.com/agenthub](https://github.com/agenthub)
+- Twitter: [@agenthub](https://twitter.com/agenthub)
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors who have helped shape Agent Hub
+- Special thanks to the open-source community
+- Icons provided by [Lucide Icons](https://lucide.dev)
+- UI components powered by [Radix UI](https://www.radix-ui.com)
+
+---
+
+Built with ❤️ by the Agent Hub Team
